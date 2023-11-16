@@ -1,3 +1,8 @@
+
+Param(
+    [string] [Parameter(Mandatory = $true)] $pass
+)
+
 # Folders
 Start-Transcript -Path "C:\Temp\transcript0.txt" -NoClobber
 New-Item -ItemType Directory c:\Temp
@@ -10,6 +15,6 @@ Set-Location "C:\Temp\"
 
 SteamSetup.exe /S
 
-msiexec /i tightvnc-2.7.1-setup-64bit.msi /quiet /norestart
+msiexec /i tightvnc-2.7.1-setup-64bit.msi /quiet /norestart SET_USEVNCAUTHENTICATION=1 VALUE_OF_USEVNCAUTHENTICATION=1 SET_PASSWORD=1 VALUE_OF_PASSWORD=$pass SET_USECONTROLAUTHENTICATION=1
 
 Stop-Transcript
