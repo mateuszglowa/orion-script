@@ -16,7 +16,5 @@ Set-Location "C:\Temp\"
 .\SteamSetup.exe /S
 
 msiexec /i .\tightvnc-2.8.81-gpl-setup-64bit.msi /quiet /norestart SET_USEVNCAUTHENTICATION=1 VALUE_OF_USEVNCAUTHENTICATION=1 SET_PASSWORD=1 VALUE_OF_PASSWORD=$pass SET_USECONTROLAUTHENTICATION=1
-#Start-Process msiexec.exe /i C:\Temp\tightvnc-2.7.1-setup-64bit.msi /quiet /norestart SET_USEVNCAUTHENTICATION=1 VALUE_OF_USEVNCAUTHENTICATION=1 SET_PASSWORD=1 VALUE_OF_PASSWORD=$pass SET_USECONTROLAUTHENTICATION=1
-#Start-Process msiexec.exe -Wait -ArgumentList '/I C:\Temp\tightvnc-2.7.1-setup-64bit.msi /quiet /norestart SET_USEVNCAUTHENTICATION=1 VALUE_OF_USEVNCAUTHENTICATION=1 SET_PASSWORD=1 VALUE_OF_PASSWORD=$pass SET_USECONTROLAUTHENTICATION=1'
 
 Stop-Transcript
