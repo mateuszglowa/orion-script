@@ -12,9 +12,15 @@ Invoke-WebRequest -URI "https://cdn.cloudflare.steamstatic.com/client/installer/
 Invoke-WebRequest -URI "https://www.tightvnc.com/download/2.8.81/tightvnc-2.8.81-gpl-setup-64bit.msi" -OutFile "C:\Temp\tightvnc-2.8.81-gpl-setup-64bit.msi";
 
 Set-Location "C:\Temp\"
-
+Write-Output "Installing Steam Client"
 .\SteamSetup.exe /S
 
+Write-Output "Installing tightvnc-2 - VNC"
 msiexec /i .\tightvnc-2.8.81-gpl-setup-64bit.msi /quiet /norestart SET_USEVNCAUTHENTICATION=1 VALUE_OF_USEVNCAUTHENTICATION=1 SET_PASSWORD=1 VALUE_OF_PASSWORD=$pass SET_USECONTROLAUTHENTICATION=1
+
+
+Write-Output "Installing Scream - Virtual Audio drivers"
+Expand-Archive -Path C:\Temp\Scream4.0.zip -DestinationPath C:\Temp\Scream4
+Start-Process -FilePath "C:\Temp\Scream4\Install\Install-x64.bat" 
 
 Stop-Transcript
