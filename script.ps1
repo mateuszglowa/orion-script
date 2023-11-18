@@ -16,7 +16,7 @@ Write-Output "Installing Steam Client"
 .\SteamSetup.exe /S
 
 Write-Output "Installing tightvnc-2 - VNC"
-msiexec /i .\tightvnc-2.8.81-gpl-setup-64bit.msi /quiet /norestart SET_USEVNCAUTHENTICATION=1 VALUE_OF_USEVNCAUTHENTICATION=1 SET_PASSWORD=1 VALUE_OF_PASSWORD=$pass SET_USECONTROLAUTHENTICATION=1
+msiexec /i C:\Temp\tightvnc-2.8.81-gpl-setup-64bit.msi /quiet /norestart SET_USEVNCAUTHENTICATION=1 VALUE_OF_USEVNCAUTHENTICATION=1 SET_PASSWORD=1 VALUE_OF_PASSWORD=$pass SET_USECONTROLAUTHENTICATION=1 SERVER_REGISTER_AS_SERVICE=1
 
 
 Write-Output "Installing Scream - Virtual Audio drivers"
